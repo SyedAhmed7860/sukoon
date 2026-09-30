@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attribution & Sources — SUKOON</title>
+  <meta name="description" content="Attribution, data sources, and licenses for SUKOON Quran app. Tanzil Project, Saheeh International, and Amiri font.">
+  <style>
+    :root {
+      --bg: #080A0D;
+      --surface: #12171E;
+      --surface-hover: #18202A;
+      --border: #242930;
+      --accent: #C8A96B;
+      --accent-soft: #8F7950;
+      --accent-light: #DFBE7D;
+      --text-main: #F4F1E8;
+      --text-muted: #A7A7A0;
+      --text-dim: #777A78;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.65;
+      padding: 40px 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    header {
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+    }
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #1C242F, #12171E);
+      border: 1px solid var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .brand-title {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--text-main);
+      text-decoration: none;
+    }
+    .brand-tagline {
+      font-size: 14px;
+      color: var(--accent);
+      letter-spacing: 1px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    nav.main-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    nav.main-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background-color: var(--surface);
+      transition: all 0.2s ease;
+    }
+    nav.main-nav a:hover, nav.main-nav a.active {
+      color: var(--accent);
+      border-color: var(--accent);
+      background-color: rgba(200, 169, 107, 0.08);
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+    .doc-meta {
+      font-size: 14px;
+      color: var(--accent);
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 28px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(36, 41, 48, 0.6);
+      padding-bottom: 8px;
+    }
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-top: 18px;
+      margin-bottom: 8px;
+    }
+    p {
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    ul, ol {
+      color: var(--text-muted);
+      margin-left: 24px;
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+    li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+    strong {
+      color: var(--text-main);
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .source-block {
+      background: rgba(18, 23, 30, 0.8);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 20px;
+    }
+    .source-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+    .source-meta {
+      font-size: 13.5px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .source-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand-row">
+        <a href="../" class="brand-logo">س</a>
+        <div>
+          <a href="../" class="brand-title">SUKOON</a>
+          <div class="brand-tagline">Pause. Read. Reflect.</div>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="../">&larr; Home</a>
+        <a href="../privacy-policy/">Privacy Policy</a>
+        <a href="../terms/">Terms of Use</a>
+        <a href="../support/">Support & FAQ</a>
+        <a href="./" class="active">Attribution & Sources</a>
+        <a href="../about/">About</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="card">
+        <h1>Attribution & Content Sources</h1>
+        <div class="doc-meta">
+          <strong>Application:</strong> SUKOON (<code>com.syedahmed.sukoon</code>) &bull; 
+          <strong>Content Standard:</strong> 100% Verified Scholarly Sources
+        </div>
+
+        <p>
+          In producing SUKOON, our highest priority is content integrity and reverence for the sacred words of the Noble Quran. Every verse, translation, font, and computational algorithm is attributed to respected scholarly organizations and recognized open-source contributors.
+        </p>
+
+        <h2>1. Holy Quran Arabic Text</h2>
+        <div class="source-block">
+          <div class="source-title">Tanzil Quran Text (Uthmanic Hafs Script)</div>
+          <div class="source-meta">Provider: Tanzil Project &bull; License: Creative Commons Attribution 3.0 Unported (CC-BY 3.0)</div>
+          <p class="source-desc">
+            The Arabic text in SUKOON is sourced from the Tanzil Project (<a href="https://tanzil.net" target="_blank" rel="noopener">tanzil.net</a>). Tanzil is an internationally recognized Quranic repository produced through cross-verification of digital Quran texts against verified mushafs, widely trusted by digital institutions globally. The dataset includes all 114 Surahs and 6,236 Ayahs.
+          </p>
+        </div>
+
+        <h2>2. English Quran Translation</h2>
+        <div class="source-block">
+          <div class="source-title">Saheeh International (1997)</div>
+          <div class="source-meta">Translators: Emily Assami, Mary Kennedy, Amatullah Bantley &bull; Published: Abul-Qasim Publishing House (1997)</div>
+          <p class="source-desc">
+            The English rendering provided throughout SUKOON is the renowned Saheeh International translation. It is widely praised for its clarity, contemporary English phrasing, faithfulness to orthodox Sunni understanding, and clear presentation of meaning.
+          </p>
+        </div>
+
+        <h2>3. Classical Quranic Commentary (Tafsir)</h2>
+        <div class="source-block">
+          <div class="source-title">Tafsir Ibn Kathir (Abridged Classical Commentary)</div>
+          <div class="source-meta">Author: Al-Hafiz Ibn Kathir (701&ndash;774 AH / 1300&ndash;1373 CE)</div>
+          <p class="source-desc">
+            Reflective contextual summaries provided in SUKOON are derived strictly from classical scholarly commentary—primarily the abridged Tafsir Ibn Kathir. SUKOON maintains an absolute prohibition against synthetic or AI-generated commentary.
+          </p>
+        </div>
+
+        <h2>4. Arabic Typography & Calligraphy Font</h2>
+        <div class="source-block">
+          <div class="source-title">Amiri Quran Font</div>
+          <div class="source-meta">Designer: Khaled Hosny &bull; License: SIL Open Font License 1.1 (OFL)</div>
+          <p class="source-desc">
+            The Arabic script is rendered using the Amiri Quran typeface, a classical Arabic typeface in Naskh style based on the celebrated design of the Bulaq Press Cairo Holy Quran. It provides impeccable legibility for Quranic ligatures, vowel marks (tashkeel), and ayah stop symbols.
+          </p>
+        </div>
+
+        <h2>5. Open Source Software Libraries</h2>
+        <p>SUKOON is built using the following open-source frameworks and libraries:</p>
+        <ul>
+          <li><strong>Android Jetpack (Google):</strong> Jetpack Compose, Room Database, Jetpack DataStore, Lifecycle, Navigation, Hilt, and WorkManager under the <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener">Apache License 2.0</a>.</li>
+          <li><strong>Kotlin Coroutines (JetBrains):</strong> Asynchronous programming primitives under the Apache License 2.0.</li>
+          <li><strong>Gson (Google):</strong> High-performance JSON parser under the Apache License 2.0.</li>
+        </ul>
+
+        <h2>6. Strict Content-Integrity Pledge</h2>
+        <p>
+          We solemnly uphold the following content integrity standards:
+        </p>
+        <ul>
+          <li><strong>Zero Synthetic Verses:</strong> No artificial intelligence model has been or will ever be permitted to generate, rewrite, or paraphrase Quranic Arabic verses.</li>
+          <li><strong>Diacritic Fidelity:</strong> All tashkeel, sukun, shaddah, and stop signs are preserved exactly as verified in the Tanzil Uthmanic standard.</li>
+          <li><strong>No Fragment Merging:</strong> Verses are never silently truncated, spliced, or merged across contexts.</li>
+          <li><strong>Scholarly Attribution:</strong> Word root information and classical context are verified against authoritative lexicons and classical tafsir collections.</li>
+        </ul>
+      </div>
+    </main>
+
+    <footer>
+      <div>&copy; 2026 SUKOON. Developed by Syed Ahmed. All rights reserved.</div>
+      <div>Attribution & Licensing Documentation for <code>com.syedahmed.sukoon</code></div>
+    </footer>
+  </div>
+</body>
+</html>

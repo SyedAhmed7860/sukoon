@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUKOON — Pause. Read. Reflect.</title>
+  <meta name="description" content="SUKOON is a completely free, offline-first Quran companion. Free. Offline. For everyone.">
+  <style>
+    :root {
+      --bg: #080A0D;
+      --surface: #12171E;
+      --surface-hover: #18202A;
+      --border: #242930;
+      --accent: #C8A96B;
+      --accent-soft: #8F7950;
+      --accent-light: #DFBE7D;
+      --text-main: #F4F1E8;
+      --text-muted: #A7A7A0;
+      --text-dim: #777A78;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.65;
+      padding: 40px 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    header {
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+    }
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #1C242F, #12171E);
+      border: 1px solid var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: var(--accent);
+      font-weight: 700;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    }
+    .brand-title {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: var(--text-main);
+    }
+    .brand-tagline {
+      font-size: 16px;
+      color: var(--accent);
+      letter-spacing: 1.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .brand-sub {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-top: 6px;
+    }
+    nav.main-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    nav.main-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background-color: var(--surface);
+      transition: all 0.2s ease;
+    }
+    nav.main-nav a:hover, nav.main-nav a.active {
+      color: var(--accent);
+      border-color: var(--accent);
+      background-color: rgba(200, 169, 107, 0.08);
+    }
+    .hero-card {
+      background: linear-gradient(180deg, #151C24 0%, #0F141A 100%);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px 32px;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+    .hero-card h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+    .hero-card p {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .pillar-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .pillar-icon {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+    .pillar-card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+    .pillar-card p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+    .nav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+      margin-bottom: 32px;
+    }
+    .nav-card {
+      display: block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .nav-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+    .nav-card h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .nav-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(200, 169, 107, 0.15);
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .meta-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(36, 41, 48, 0.5);
+    }
+    .meta-row:last-child {
+      border-bottom: none;
+    }
+    .meta-label {
+      color: var(--text-dim);
+    }
+    .meta-value {
+      color: var(--text-main);
+      font-weight: 500;
+      text-align: right;
+    }
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand-row">
+        <div class="brand-logo">س</div>
+        <div>
+          <div class="brand-title">SUKOON</div>
+          <div class="brand-tagline">Pause. Read. Reflect.</div>
+        </div>
+      </div>
+      <div class="brand-sub">The Quran, always within reach. &bull; Free. Offline. For everyone.</div>
+
+      <nav class="main-nav">
+        <a href="privacy-policy/" class="active-item">Privacy Policy</a>
+        <a href="terms/">Terms of Use</a>
+        <a href="support/">Support & FAQ</a>
+        <a href="attribution/">Attribution & Sources</a>
+        <a href="about/">About SUKOON</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero-card">
+        <span class="badge">Production Legal & Information Hub</span>
+        <h1>Welcome to SUKOON</h1>
+        <p>
+          SUKOON is a completely free, peaceful, offline-first Quran companion designed to make the Noble Quran effortless to access, read, reflect upon, and return to. Built with reverence and uncompromising content integrity.
+        </p>
+        <p>
+          This website serves as the official legal, compliance, and documentation portal for the SUKOON Android application.
+        </p>
+
+        <div class="pillars">
+          <div class="pillar-card">
+            <div class="pillar-icon">&#10003;</div>
+            <h3>100% Free Forever</h3>
+            <p>No subscriptions, no paywalls, and no premium tiers. The complete Quran is freely available to everyone.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">&#10003;</div>
+            <h3>Zero Advertisements</h3>
+            <p>No banner ads, no video popups, and no advertising SDKs. A pure, undisturbed spiritual environment.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">&#10003;</div>
+            <h3>Total Privacy</h3>
+            <p>No account required, no login, and no data collection. All bookmarks, progress, and reflections stay on your device.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="font-size: 20px; font-weight: 700; color: var(--text-main); margin-bottom: 16px; letter-spacing: 0.5px;">Application Documentation & Legal Center</h2>
+
+      <div class="nav-grid">
+        <a href="privacy-policy/" class="nav-card">
+          <span class="badge">Google Play Requirement</span>
+          <h2>Privacy Policy &rarr;</h2>
+          <p>Read our full privacy statement explaining how SUKOON operates completely on-device with zero tracking.</p>
+        </a>
+
+        <a href="terms/" class="nav-card">
+          <span class="badge">Public Legal Document</span>
+          <h2>Terms of Use &rarr;</h2>
+          <p>Review the terms governing the use of SUKOON as a free, educational spiritual application.</p>
+        </a>
+
+        <a href="support/" class="nav-card">
+          <span class="badge">Help & Contact</span>
+          <h2>Support & FAQ &rarr;</h2>
+          <p>Find answers to common questions about prayer times, notifications, offline reading, and contact the developer.</p>
+        </a>
+
+        <a href="attribution/" class="nav-card">
+          <span class="badge">Content Integrity</span>
+          <h2>Attribution & Sources &rarr;</h2>
+          <p>Official citations and licenses for Tanzil Uthmanic Arabic text, Saheeh International translation, and Amiri typography.</p>
+        </a>
+
+        <a href="about/" class="nav-card">
+          <span class="badge">Product Philosophy</span>
+          <h2>About SUKOON &rarr;</h2>
+          <p>Learn about the mission, product architecture, and developer dedication behind SUKOON.</p>
+        </a>
+      </div>
+
+      <div class="meta-box">
+        <div class="meta-row">
+          <span class="meta-label">Application ID / Package</span>
+          <span class="meta-value">com.syedahmed.sukoon</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Developer</span>
+          <span class="meta-value">Syed Ahmed</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Official Contact</span>
+          <span class="meta-value"><a href="mailto:SYEDAHMED.SA43@GMAIL.COM">SYEDAHMED.SA43@GMAIL.COM</a></span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Primary Arabic Source</span>
+          <span class="meta-value">Tanzil Project (Uthmanic Hafs &bull; CC-BY 3.0)</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">English Translation</span>
+          <span class="meta-value">Saheeh International (1997)</span>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div>&copy; 2026 SUKOON. Developed by Syed Ahmed. All rights reserved.</div>
+      <div>Designed with reverence. Free. Offline. For everyone.</div>
+    </footer>
+  </div>
+</body>
+</html>

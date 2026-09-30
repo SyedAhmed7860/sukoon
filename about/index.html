@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About SUKOON — The Quran, Always Within Reach</title>
+  <meta name="description" content="About SUKOON: A free, offline-first Quran companion developed by Syed Ahmed. Built for peace, reflection, and reverence.">
+  <style>
+    :root {
+      --bg: #080A0D;
+      --surface: #12171E;
+      --surface-hover: #18202A;
+      --border: #242930;
+      --accent: #C8A96B;
+      --accent-soft: #8F7950;
+      --accent-light: #DFBE7D;
+      --text-main: #F4F1E8;
+      --text-muted: #A7A7A0;
+      --text-dim: #777A78;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.65;
+      padding: 40px 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    header {
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+    }
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #1C242F, #12171E);
+      border: 1px solid var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .brand-title {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--text-main);
+      text-decoration: none;
+    }
+    .brand-tagline {
+      font-size: 14px;
+      color: var(--accent);
+      letter-spacing: 1px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    nav.main-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    nav.main-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background-color: var(--surface);
+      transition: all 0.2s ease;
+    }
+    nav.main-nav a:hover, nav.main-nav a.active {
+      color: var(--accent);
+      border-color: var(--accent);
+      background-color: rgba(200, 169, 107, 0.08);
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+    .doc-meta {
+      font-size: 14px;
+      color: var(--accent);
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 28px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(36, 41, 48, 0.6);
+      padding-bottom: 8px;
+    }
+    p {
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    ul, ol {
+      color: var(--text-muted);
+      margin-left: 24px;
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+    li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+    strong {
+      color: var(--text-main);
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .quote-box {
+      background: rgba(200, 169, 107, 0.08);
+      border-left: 4px solid var(--accent);
+      padding: 20px 24px;
+      border-radius: 0 10px 10px 0;
+      margin: 24px 0;
+      font-style: italic;
+      color: var(--text-main);
+      font-size: 16px;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .feature-item {
+      background: rgba(8, 10, 13, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px;
+    }
+    .feature-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .feature-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand-row">
+        <a href="../" class="brand-logo">س</a>
+        <div>
+          <a href="../" class="brand-title">SUKOON</a>
+          <div class="brand-tagline">Pause. Read. Reflect.</div>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="../">&larr; Home</a>
+        <a href="../privacy-policy/">Privacy Policy</a>
+        <a href="../terms/">Terms of Use</a>
+        <a href="../support/">Support & FAQ</a>
+        <a href="../attribution/">Attribution & Sources</a>
+        <a href="./" class="active">About</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="card">
+        <h1>About SUKOON</h1>
+        <div class="doc-meta">
+          <strong>Vision:</strong> Free. Offline. For everyone. &bull; 
+          <strong>Creator:</strong> Syed Ahmed &bull; 
+          <strong>App ID:</strong> <code>com.syedahmed.sukoon</code>
+        </div>
+
+        <div class="quote-box">
+          &ldquo;The Arabic word <em>Sukoon</em> (سُكُون) signifies tranquility, calmness, and peaceful stillness. Our mission is to restore that sacred stillness to your daily Quran reading.&rdquo;
+        </div>
+
+        <h2>Our Mission</h2>
+        <p>
+          In an era where digital tools are often cluttered with distracting advertisements, invasive tracking, and forced account registrations, <strong>SUKOON</strong> was created to offer an alternative: an ad-free, completely private, offline-first Quran companion crafted with reverence.
+        </p>
+        <p>
+          Whether you are opening the Quran for daily recitation, seeking peace during a difficult moment, studying classical vocabulary, or calculating prayer times on a remote journey, SUKOON is always ready—instantly, privately, and completely offline.
+        </p>
+
+        <h2>Core Principles</h2>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <div class="feature-title">&#9670; Always Free</div>
+            <p class="feature-desc">No subscriptions, no hidden paywalls, and no monetized Quran content. The Divine Revelation belongs freely to all humanity.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-title">&#9670; Completely Offline</div>
+            <p class="feature-desc">All 6,236 verses, translations, tafsir summaries, and prayer calculation formulas are stored directly on your device.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-title">&#9670; Zero Advertisements</div>
+            <p class="feature-desc">No banners, popups, video ads, or sponsored ayahs. Your relationship with the Book of Allah is kept sacred.</p>
+          </div>
+          <div class="feature-item">
+            <div class="feature-title">&#9670; Uncompromising Privacy</div>
+            <p class="feature-desc">No login required, no email collected, no tracking cookies, and no cloud surveillance. Everything stays on your phone.</p>
+          </div>
+        </div>
+
+        <h2>Comprehensive Feature Suite</h2>
+        <p>
+          SUKOON brings together four harmonious pillars of spiritual companion utility:
+        </p>
+        <ul>
+          <li><strong>The Quran Reader:</strong> Complete 114 Surahs and 30 Juz with authentic Tanzil Uthmanic Arabic, Saheeh International English translation, customizable font sizes, and instant verse search.</li>
+          <li><strong>Prayer Times & Qibla:</strong> On-device solar calculations with support for major worldwide calculation methods, punctual local notifications, and an offline Qibla compass.</li>
+          <li><strong>Learning & Quizzes:</strong> Scholarly quizzes on surah themes, ayah identification, and verified Arabic vocabulary to deepen your understanding of the Quran.</li>
+          <li><strong>Personal Journey:</strong> Private reflection notes, gentle reading streaks, and milestone achievements stored entirely within your local sandbox.</li>
+        </ul>
+
+        <h2>About the Developer</h2>
+        <p>
+          SUKOON was developed and engineered by <strong>Syed Ahmed</strong>, with a deep commitment to digital craftsmanship, Android architectural excellence, and Islamic content fidelity.
+        </p>
+        <p>
+          If you have thoughts, feedback, or would like to report any discrepancy, please write directly:
+        </p>
+        <p>
+          <strong>Developer Email:</strong> <a href="mailto:SYEDAHMED.SA43@GMAIL.COM">SYEDAHMED.SA43@GMAIL.COM</a><br>
+          <strong>Package ID:</strong> <code>com.syedahmed.sukoon</code>
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <div>&copy; 2026 SUKOON. Developed by Syed Ahmed. All rights reserved.</div>
+      <div>Pause. Read. Reflect. &bull; Free. Offline. For everyone.</div>
+    </footer>
+  </div>
+</body>
+</html>

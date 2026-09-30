@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support & FAQ — SUKOON</title>
+  <meta name="description" content="Support and Frequently Asked Questions for SUKOON Quran app (com.syedahmed.sukoon). Troubleshooting, prayer times help, and developer contact.">
+  <style>
+    :root {
+      --bg: #080A0D;
+      --surface: #12171E;
+      --surface-hover: #18202A;
+      --border: #242930;
+      --accent: #C8A96B;
+      --accent-soft: #8F7950;
+      --accent-light: #DFBE7D;
+      --text-main: #F4F1E8;
+      --text-muted: #A7A7A0;
+      --text-dim: #777A78;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.65;
+      padding: 40px 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    header {
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+    }
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #1C242F, #12171E);
+      border: 1px solid var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: var(--accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .brand-title {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--text-main);
+      text-decoration: none;
+    }
+    .brand-tagline {
+      font-size: 14px;
+      color: var(--accent);
+      letter-spacing: 1px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    nav.main-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    nav.main-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background-color: var(--surface);
+      transition: all 0.2s ease;
+    }
+    nav.main-nav a:hover, nav.main-nav a.active {
+      color: var(--accent);
+      border-color: var(--accent);
+      background-color: rgba(200, 169, 107, 0.08);
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+    .doc-meta {
+      font-size: 14px;
+      color: var(--accent);
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-item {
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(36, 41, 48, 0.6);
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .faq-q {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .faq-q span {
+      color: var(--accent-soft);
+      font-weight: 700;
+    }
+    .faq-a {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .faq-a ul {
+      margin-left: 20px;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+    .contact-card {
+      background: linear-gradient(180deg, #18222E 0%, #12171E 100%);
+      border: 1px solid var(--accent-soft);
+      border-radius: 14px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 32px;
+    }
+    .contact-btn {
+      display: inline-block;
+      margin-top: 16px;
+      background: var(--accent);
+      color: #080A0D;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .contact-btn:hover {
+      background: var(--accent-light);
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(200, 169, 107, 0.3);
+    }
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand-row">
+        <a href="../" class="brand-logo">س</a>
+        <div>
+          <a href="../" class="brand-title">SUKOON</a>
+          <div class="brand-tagline">Pause. Read. Reflect.</div>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="../">&larr; Home</a>
+        <a href="../privacy-policy/">Privacy Policy</a>
+        <a href="../terms/">Terms of Use</a>
+        <a href="./" class="active">Support & FAQ</a>
+        <a href="../attribution/">Attribution & Sources</a>
+        <a href="../about/">About</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="card">
+        <h1>Support & Help Center</h1>
+        <div class="doc-meta">
+          <strong>Application:</strong> SUKOON (<code>com.syedahmed.sukoon</code>) &bull; 
+          <strong>Direct Support:</strong> <a href="mailto:SYEDAHMED.SA43@GMAIL.COM">SYEDAHMED.SA43@GMAIL.COM</a>
+        </div>
+
+        <p>
+          Need assistance with SUKOON? Below are answers to the most frequently asked questions regarding offline functionality, prayer times, reminders, and feature settings.
+        </p>
+
+        <div class="faq-item">
+          <div class="faq-q"><span>Q.</span> Does SUKOON work without an internet connection?</div>
+          <div class="faq-a">
+            <strong>Yes, 100%.</strong> All 114 Surahs, 6,236 Ayahs, the complete Saheeh International English translation, classical Ibn Kathir tafsir summaries, Quranic learning quizzes, and the prayer times calculation engine are pre-bundled directly within the application. You can use SUKOON anywhere—on flights, in remote areas, or without mobile data.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q"><span>Q.</span> How are prayer times calculated?</div>
+          <div class="faq-a">
+            SUKOON uses astronomical solar algorithms directly on your phone's processor. It takes your geographic latitude, longitude, and selected calculation convention (such as Muslim World League, ISNA, Umm al-Qura, Egyptian Authority, or Karachi) to compute exact solar transit times. No internet connection is needed for prayer times.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q"><span>Q.</span> Why do my prayer times differ slightly from my local mosque?</div>
+          <div class="faq-a">
+            Small differences (typically 2&ndash;5 minutes) usually happen because:
+            <ul>
+              <li><strong>Calculation Method:</strong> Your local mosque may follow a specific convention (e.g., University of Islamic Sciences Karachi or Umm al-Qura). You can adjust this in SUKOON Settings &rarr; Prayer Calculation Method.</li>
+              <li><strong>Asr Juristic Method:</strong> The standard (Shafi'i, Maliki, Hanbali) calculates Asr when shadow equals object length; the Hanafi method calculates Asr when shadow equals twice object length. You can toggle this in Settings.</li>
+              <li><strong>Mosque Iqamah Times:</strong> Mosques often fix adhan or iqamah times to round minutes (e.g., 5:15 instead of 5:12).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q"><span>Q.</span> Why am I not receiving prayer or reflection notifications?</div>
+          <div class="faq-a">
+            If notifications do not appear on time, please check the following Android settings:
+            <ul>
+              <li><strong>Allow Notifications:</strong> In your phone's Settings &rarr; Apps &rarr; SUKOON &rarr; Notifications, make sure notifications are enabled.</li>
+              <li><strong>Battery Optimization:</strong> Aggressive manufacturer battery savers (especially on Xiaomi/MIUI, Samsung, Huawei, OnePlus) can kill background alarms. Go to Settings &rarr; Apps &rarr; SUKOON &rarr; Battery &rarr; select &ldquo;Unrestricted&rdquo; or &ldquo;No restrictions&rdquo;.</li>
+              <li><strong>Alarms & Reminders Permission:</strong> Ensure the &ldquo;Schedule exact alarms&rdquo; permission is granted in Android system settings.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q"><span>Q.</span> Where are my bookmarks, streaks, and reflections saved?</div>
+          <div class="faq-a">
+            Everything is saved locally on your phone in a private SQLite database managed by Android Room. We do not maintain any cloud databases. If you clear app storage or uninstall SUKOON, this data will be cleared.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q"><span>Q.</span> Are there any ads or hidden paid features?</div>
+          <div class="faq-a">
+            <strong>No, never.</strong> SUKOON has zero advertisements and zero paid features. It is created purely as a free, respectful, and accessible Quran companion for everyone around the world.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q"><span>Q.</span> What Arabic script does SUKOON use?</div>
+          <div class="faq-a">
+            SUKOON uses the standard <strong>Uthmanic Hafs</strong> script sourced from the globally verified Tanzil Project, rendered using the classical <strong>Amiri Quran</strong> typography designed by Khaled Hosny.
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h2 style="font-size: 20px; color: var(--text-main); margin-bottom: 8px;">Still have questions or found an issue?</h2>
+          <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 16px;">
+            The developer personally reads and responds to all user inquiries, bug reports, and suggestions.
+          </p>
+          <a href="mailto:SYEDAHMED.SA43@GMAIL.COM?subject=SUKOON%20App%20Support" class="contact-btn">
+            Email Developer: SYEDAHMED.SA43@GMAIL.COM
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div>&copy; 2026 SUKOON. Developed by Syed Ahmed. All rights reserved.</div>
+      <div>Support & Documentation portal for <code>com.syedahmed.sukoon</code></div>
+    </footer>
+  </div>
+</body>
+</html>
